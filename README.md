@@ -2,8 +2,15 @@
 该作品原本是阿姆斯特丹设计师 `Bryan James`用纯CSS技术表现出30种动物的碎片拼图形象，这30动物，非常的可爱，但不幸的是，它们都是濒临灭绝的动物，它们的生存情况正面临着危机。 你能看到它们在挣扎，它们在反抗... 它们在这个互动的作品里申诉...
 
 
-点击打开[ 30个物种，30种碎片拼图 (“Species in Pieces”互动式濒危动物展览) ](http://species-in-pieces.com/)的网站主页，
-![灰盔鸟](https://img-blog.csdnimg.cn/20200620094024217.gif)
+点击打开[ 30个物种，30种碎片拼图 (“Species in Pieces”互动式濒危动物展览) ](http://species-in-pieces.com/)的网站主页   
+
+
+![灰盔鸟](https://img-blog.csdnimg.cn/20200620094024217.gif)  
+
+<br>
+<br>
+  
+  
 空灵的背景音乐引入了颜色饱满的多边形图案，配合着30种濒危动物的文字介绍。伴随30只生命样貌的切换，一幅幅几何状组合的破碎，设计师试图展现过去10年来栖息地遭受破坏是如何把动物推向灭绝的边缘——曾是 2014 年巴西世界杯吉祥物的三带犰狳（ Three-Banded Armadillo of Brazil）数量减少了 30%，新几内亚岛上的原针鼹鼠（ Long-Beaked Echidna ）因人类的狩猎而在过去 35-40 年间减少近 80%。
 
 ![鸮鹦鹉](https://img-blog.csdnimg.cn/2020062009454617.gif)
@@ -208,7 +215,11 @@ clip-path: polygon(49% 0, 95% 65%, 11% 94%);
 
 # 参考
 [1. http://species-in-pieces.com](http://species-in-pieces.com)
+
 [2. https://www.miaov.com/index.php/news/newsDetail/nid/152](https://www.miaov.com/index.php/news/newsDetail/nid/152)
+
 [3. http://project.microbu.com/161114/dongwu/](http://project.microbu.com/161114/dongwu/)
+
 [4. https://www.webhek.com/post/species-in-pieces.html](https://www.webhek.com/post/species-in-pieces.html)
+
 [5. https://www.techug.com/post/species-in-pieces.html](https://www.techug.com/post/species-in-pieces.html)
