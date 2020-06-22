@@ -92,6 +92,61 @@ clip-path: polygon(49% 0, 95% 65%, 11% 94%);
 ```
 <br>
 
+**draw-demo.html**
+
+```html
+<!DOCTYPE html">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+    <body>
+        <div class="polygon-wrap">
+            <img class="feature" src="assets/img/polygon-demo.png" alt="polygon">
+            <script src="assets/js/jquery-3.js"></script>
+            <script>
+                nodescss = '-webkit-clip-path: polygon( ';
+                nodecount = 0;
+                $(document.body).on('click', function(e) {
+                    var mouseX = e.pageX;
+                    var mouseY = e.pageY;
+                    var shapesoffsetX = $('.polygon-wrap').offset().left;
+                    var shapesoffsetY = $('.polygon-wrap').offset().top;
+                    var polygonswidth = $('.polygon-wrap').width();
+                    var polygonsheight = $('.polygon-wrap').height();
+                    var shapesmouseX = mouseX - shapesoffsetX;
+                    var shapesmouseY = mouseY - shapesoffsetY;
+                    var mousepercentX = shapesmouseX / polygonswidth;
+                    var mousepercentY = shapesmouseY / polygonsheight;
+                    var finalmouseX = (mousepercentX) * 100;
+                    var finalmouseY = (mousepercentY) * 100;
+                    var normalisedX = parseFloat(finalmouseX).toFixed(3);
+                    var normalisedY = parseFloat(finalmouseY).toFixed(3);
+                    nodecount = nodecount + 1;
+                    if (nodecount < 3) {
+                        nodescss = nodescss + normalisedX + '% ' + normalisedY + '% ,';
+                    } else
+                    if (nodecount == 3) {
+                        nodescss = nodescss + normalisedX + '% ' + normalisedY + '% );';
+                        alert(nodescss);
+                        console.log(nodescss);
+                        nodescss = '-webkit-clip-path: polygon( ';
+                        nodecount = 0;
+                    }
+                });
+            </script>
+    </body>
+
+</html>
+```
+>`draw-demo.html`用于获取鼠标点击三个点形成的相对位置坐标用于画三角形,例如`-webkit-clip-path       : polygon(67.3% 25.143%, 68.2% 20.143%, 71.3% 32.714%);`<br>
+>需要注意的是需要画其他多边形的话要将`if (nodecount == 3)`修改成你需要的值,如果是四边形就改成`if (nodecount == 4)`<br>
+>`draw-demo.html`的相对坐标是相对于`polygon-wrap`这个class的而`species-in-pieces.html	`是相对于`show-stage`这个id, 不同的参照物得到的相对坐标是不一样的
+
+<br>
+
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020062014554528.png)
 当然也有不少问题，点击的精确度并不如预想，图形绘制有间隙，只能通过微调让它对齐，这十分考验人的耐心。
 
@@ -206,6 +261,7 @@ clip-path: polygon(49% 0, 95% 65%, 11% 94%);
 	│       ├── jquery-3.js   jquery库
 	│       ├── main.js		主要js文件
 	│       └── soundmanager2.min.js  声音控制需要的库文件
+  ├── draw-demo.html 用于获取鼠标后形成的多边形坐标的demo
 	├── README.md
 	└── species-in-pieces.html		主页
 	```
