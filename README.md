@@ -261,7 +261,7 @@ clip-path: polygon(49% 0, 95% 65%, 11% 94%);
 	│       ├── jquery-3.js   jquery库
 	│       ├── main.js		主要js文件
 	│       └── soundmanager2.min.js  声音控制需要的库文件
-  ├── draw-demo.html 用于获取鼠标后形成的多边形坐标的demo
+	├── draw-demo.html 用于获取鼠标后形成的多边形坐标的demo
 	├── README.md
 	└── species-in-pieces.html		主页
 	```
