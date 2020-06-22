@@ -1,0 +1,45 @@
+<!DOCTYPE html">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+    <body>
+        <div class="polygon-wrap">
+            <img class="feature" src="assets/img/polygon-demo.png" alt="polygon">
+            <script src="assets/js/jquery-3.js"></script>
+            <script>
+                nodescss = '-webkit-clip-path: polygon( ';
+                nodecount = 0;
+                $(document.body).on('click', function(e) {
+                    var mouseX = e.pageX;
+                    var mouseY = e.pageY;
+                    var shapesoffsetX = $('.polygon-wrap').offset().left;
+                    var shapesoffsetY = $('.polygon-wrap').offset().top;
+                    var polygonswidth = $('.polygon-wrap').width();
+                    var polygonsheight = $('.polygon-wrap').height();
+                    var shapesmouseX = mouseX - shapesoffsetX;
+                    var shapesmouseY = mouseY - shapesoffsetY;
+                    var mousepercentX = shapesmouseX / polygonswidth;
+                    var mousepercentY = shapesmouseY / polygonsheight;
+                    var finalmouseX = (mousepercentX) * 100;
+                    var finalmouseY = (mousepercentY) * 100;
+                    var normalisedX = parseFloat(finalmouseX).toFixed(3);
+                    var normalisedY = parseFloat(finalmouseY).toFixed(3);
+                    nodecount = nodecount + 1;
+                    if (nodecount < 3) {
+                        nodescss = nodescss + normalisedX + '% ' + normalisedY + '% ,';
+                    } else
+                    if (nodecount == 3) {
+                        nodescss = nodescss + normalisedX + '% ' + normalisedY + '% );';
+                        alert(nodescss);
+                        console.log(nodescss);
+                        nodescss = '-webkit-clip-path: polygon( ';
+                        nodecount = 0;
+                    }
+                });
+            </script>
+    </body>
+
+</html>
